@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .topnav {
+        overflow: hidden;
+        background-color: red;
+      }
+
+      .topnav a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: sans-serif;
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .some-page-wrapper {
+        margin: 15px;
+        background-color: red;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex: 1;
+      }
+
+      .blue-column {
+        background-color: blue;
+        height: 100px;
+      }
+
+      .green-column {
+        background-color: green;
+        height: 100px;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%; /* Adjust as needed */
+        max-width: 800px; /* Optional: for centering */
+        margin: auto; /* Optional: for centering */
+      }
+
+      .box {
+        flex: 1 1 25%; /* Each box takes up 25% width */
+        height: 100px; /* Adjust height as needed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 13px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="#home">Home</a>
+      <a href="#services">About Us</a>
+      <a href="#DB">Donate Blood</a>
+      <a href="#fnDon">Find Donors</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+
+    <div>Blood Availability Checker</div>
+
+    <div class="flex-container">
+      <div class="box">First Name</div>
+      <div class="box">
+        <input type="text" id="fname" name="fname" />
+      </div>
+
+      <div class="box">Last Name</div>
+      <div class="box">
+        <input type="text" id="lname" name="lname" />
+      </div>
+
+      <div class="box">Phone</div>
+      <div class="box">
+        <input type="text" id="phone" name="phone" />
+      </div>
+
+      <div class="box">Blood Group</div>
+      <div class="box">
+        <input type="text" id="blood" name="blood" />
+      </div>
+
+      <div class="box">Address</div>
+      <div class="box">
+        <input type="text" id="address" name="address" />
+      </div>
+    </div>
+
+    <div>
+      <button class="button" onclick="getUserInput()">Submit</button>
+
+      <p id="demo"></p>
+
+      <script>
+        function getUserInput() {
+          var fname = document.getElementById("fname").value;
+          var lname = document.getElementById("lname").value;
+          var phone = document.getElementById("phone").value;
+          var address = document.getElementById("address").value;
+          var blood = document.getElementById("blood").value;
+
+          if (blood == "AB+") var x = document.getElementById("blood").value;
+          //document.getElementById("demo").innerHTML;
+          {
+            document.getElementById("demo").innerHTML =
+              fname +
+              " " +
+              lname +
+              " " +
+              "<br>" +
+              phone +
+              " " +
+              "<br>" +
+              address +
+              " " +
+              "<br>" +
+              " " +
+              "The compatible blood type are " +
+              "" +
+              "O-, O+, B-, B+, A-, A+, AB-, AB+";
+          }
+          if (blood == "AB-") {
+            var x = document.getElementById("blood").value;
+            //document.getElementById("demo").innerHTML;
+
+            document.getElementById("demo").innerHTML =
+              fname +
+              " " +
+              lname +
+              " " +
+              "<br>" +
+              phone +
+              " " +
+              "<br>" +
+              address +
+              " " +
+              "<br>" +
+              " " +
+              "The compatible blood type are" +
+              "" +
+              "O-, B-, B+, A-, A+, AB-";
+          }
+
+          if (blood == "A+") {
+            var x = document.getElementById("blood").value;
+            //document.getElementById("demo").innerHTML;
+
+            document.getElementById("demo").innerHTML =
+              fname +
+              " " +
+              lname +
+              " " +
+              "<br>" +
+              phone +
+              " " +
+              "<br>" +
+              address +
+              " " +
+              "<br>" +
+              " " +
+              "The compatible blood type are" +
+              " " +
+              "O-, O+, B-, A-, A+";
+          }
+
+          if (blood == "A-") {
+            var x = document.getElementById("blood").value;
+            //document.getElementById("demo").innerHTML;
+
+            document.getElementById("demo").innerHTML =
+              fname +
+              " " +
+              lname +
+              " " +
+              "<br>" +
+              phone +
+              " " +
+              "<br>" +
+              address +
+              " " +
+              "<br>" +
+              " " +
+              "The compatible blood type are" +
+              " " +
+              "O-, A-";
+          }
+
+          if (blood == "B+") {
+            var x = document.getElementById("blood").value;
+            //document.getElementById("demo").innerHTML;
+
+            document.getElementById("demo").innerHTML =
+              fname +
+              " " +
+              lname +
+              " " +
+              "<br>" +
+              phone +
+              " " +
+              "<br>" +
+              address +
+              " " +
+              "<br>" +
+              " " +
+              "The compatible blood type are" +
+              " " +
+              "O-, O+, B-, B+";
+          }
+
+          if (blood == "B-") {
+            var x = document.getElementById("blood").value;
+            //document.getElementById("demo").innerHTML;
+
+            document.getElementById("demo").innerHTML =
+              fname +
+              " " +
+              lname +
+              " " +
+              "<br>" +
+              phone +
+              " " +
+              "<br>" +
+              address +
+              " " +
+              "<br>" +
+              " " +
+              "The compatible blood type are" +
+              " " +
+              "O-, B-";
+          }
+
+          if (blood == "O+") {
+            var x = document.getElementById("blood").value;
+            //document.getElementById("demo").innerHTML;
+
+            document.getElementById("demo").innerHTML =
+              fname +
+              " " +
+              lname +
+              " " +
+              "<br>" +
+              phone +
+              " " +
+              "<br>" +
+              address +
+              " " +
+              "<br>" +
+              " " +
+              "The compatible blood type are" +
+              " " +
+              "O-, O+, ";
+          }
+
+          if (blood == "O-") {
+            var x = document.getElementById("blood").value;
+            //document.getElementById("demo").innerHTML;
+
+            document.getElementById("demo").innerHTML =
+              fname +
+              " " +
+              lname +
+              " " +
+              "<br>" +
+              phone +
+              " " +
+              "<br>" +
+              address +
+              " " +
+              "<br>" +
+              " " +
+              "The compatible blood type are" +
+              " " +
+              "O-, ";
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
